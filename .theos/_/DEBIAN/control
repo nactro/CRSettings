@@ -1,10 +1,11 @@
 Package: com.watcher.creachability
 Name: CRSettings
 Depends: mobilesubstrate
-Version: 1.0
 Architecture: iphoneos-arm
 Description: Custom Your Reachability View.
 Maintainer: ChanYu <lazysloths@yahoo.com>
 Author: ChanYu <lazysloths@yahoo.com>
 Section: Tweaks
 Icon: file:///Library/PreferenceBundles/crsettings.bundle/CRSettings.png
+Version: 1.0-1+debug
+Installed-Size: 592
