@@ -1,6 +1,7 @@
 #import "CReachabilityController.h"
 #import <QuartzCore/QuartzCore.h>
-
+#import <Foundation/Foundation.h>
+#import "Defines.h"
 
 @implementation CReachabilityController
 
@@ -23,8 +24,9 @@
 -(void)setupImage {
 
 	if (backgroundWindow) {
-
-		UIImage *CRImage = [UIImage imageWithContentsOfFile:@"/Library/PreferenceBundles/CRSettings.bundle/Custom.jpg"];
+		NSString *iName = @"Custom.png";
+		NSString *iPath = [kImageDirectory stringByAppendingPathComponent:iName];
+		UIImage *CRImage = [UIImage imageWithContentsOfFile:iPath];
 		CRImageview = [[[UIImageView alloc] initWithFrame:backgroundWindow.bounds]initWithImage:CRImage];
 		CRImageview.contentMode = UIViewContentModeScaleAspectFit;
 	    CRImageview.clipsToBounds = NO;

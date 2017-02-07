@@ -3,6 +3,7 @@
 #import <UIKit/UIKit.h>
 #import <substrate.h>
 #import "CReachabilityController.h"
+#import "Defines.h"
 
 #define kBundlePath @"/Library/Application Support/CRSettings/CRSettings.bundle"
 static BOOL enabled = NO;
