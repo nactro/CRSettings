@@ -1,0 +1,13 @@
+"CREnabled" = "啟用";
+"CRIntro" = "如果你想自定義背景，請將自定義的圖片放至/Library/CRSettings/中，並命名為Custom.png";
+"CRSupport"="支持我們";
+"CRReport" = "提交BUG";
+"CREmail"="聯繫開發者";
+"CRWeibo"="關注我的微博";
+"CRTwitter"="關注我的推特";
+"CRLinks"="相關鏈接";
+"CRSouce"="開源代碼";
+"CRBlog"="訪問我的博客";
+"CRDonate"="來點碎銀";
+"CRBeer"="打賞開發者";
+"CRFooter"="CopyRight Uozi.Inc ©2017. For iOS 10 :)";

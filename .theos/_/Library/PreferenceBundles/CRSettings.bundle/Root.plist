@@ -16,16 +16,25 @@
 			<key>key</key>
 			<string>enabled</string>
 			<key>label</key>
-			<string>Enabled</string>
+			<string>CREnabled</string>
 			<key>PostNotification</key>
 			<string>com.watcher.crsettings.settings/changed</string>
+		</dict>
+		<!--detail-->
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerAlignment</key>
+			<string>1</string>
+			<key>footerText</key>
+			<string>CRIntro</string>
 		</dict>
 		<!-- [] SUPPORT -->
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Support</string>
+			<string>CRSupport</string>
 		</dict>
 		<!-- File an Issue -->
 		<dict>
@@ -34,7 +43,7 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Report A Bug</string>
+			<string>CRReport</string>
 			<key>icon</key>
 			<string>bug.png</string>
 			<key>action</key>
@@ -47,7 +56,7 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Email Me</string>
+			<string>CREmail</string>
 			<key>icon</key>
 			<string>email.png</string>
 			<key>action</key>
@@ -61,7 +70,7 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Weibo-@ChanYu</string>
+			<string>CRWeibo</string>
 			<key>icon</key>
 			<string>Weibo.png</string>
 			<key>action</key>
@@ -75,7 +84,7 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Twitter-@ChanYu</string>
+			<string>CRTwitter</string>
 			<key>icon</key>
 			<string>twitter.png</string>
 			<key>action</key>
@@ -87,7 +96,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Links</string>
+			<string>CRLinks</string>
 		</dict>
 
 		<!-- Source Code -->
@@ -97,7 +106,7 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Source Code</string>
+			<string>CRSouce</string>
 			<key>icon</key>
 			<string>github.png</string>
 			<key>action</key>
@@ -111,7 +120,7 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Visit Author's Blog</string>
+			<string>CRBlog</string>
 			<key>icon</key>
 			<string>blog.png</string>
 			<key>action</key>
@@ -122,7 +131,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Donate</string>
+			<string>CRDonate</string>
 		</dict>
 
 <!-- Buy Me A Beer -->
@@ -132,7 +141,7 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Buy Me A Beer!</string>
+			<string>CRBeer</string>
 			<key>icon</key>
 			<string>beer.png</string>
 			<key>action</key>
@@ -146,7 +155,7 @@
 			<key>footerAlignment</key>
 			<string>1</string>
 			<key>footerText</key>
-			<string>CopyRight Uozi.Inc ©2017. For iOS 10 :)</string>
+			<string>CRFooter</string>
 		</dict>
 	</array>
 	<key>title</key>
