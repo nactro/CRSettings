@@ -16,4 +16,4 @@ One option is available to control this tweak in the Settings.
  
 # TO DO
 
-1.Customize pic in the Settings Panel ( like WinterBoard )
+1.Choose pic which you need in the Settings Panel ( like WinterBoard )
