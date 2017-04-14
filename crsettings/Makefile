@@ -2,7 +2,7 @@ ARCHS = armv7 arm64
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = CRSettings
-CRSettings_FILES = CRSettingsRootListController.mm
+CRSettings_FILES = CRSettingsRootListController.m
 CRSettings_INSTALL_PATH = /Library/PreferenceBundles
 CRSettings_FRAMEWORKS = UIKit
 CRSettings_PRIVATE_FRAMEWORKS = Preferences

@@ -20,61 +20,48 @@
 			<key>PostNotification</key>
 			<string>com.watcher.crsettings.settings/changed</string>
 		</dict>
-		<!--detail-->
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>footerAlignment</key>
-			<string>1</string>
-			<key>footerText</key>
-			<string>CRIntro</string>
-		</dict>
-		<!-- [] SUPPORT -->
+		<!-- [] Features -->
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>CRSupport</string>
+			<string>Features</string>
 		</dict>
-		<!-- File an Issue -->
+		<!-- From Photos -->
 		<dict>
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>CRReport</string>
+			<string>Select from Photos</string>
 			<key>icon</key>
 			<string>bug.png</string>
 			<key>action</key>
-			<string>openGitHubIssue</string>
+			<string>SelectfromPhotos</string>
 		</dict>
-		<!-- Email -->
+		<!-- Clear Images -->
 		<dict>
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>CREmail</string>
+			<string>Clear the image</string>
 			<key>icon</key>
 			<string>email.png</string>
 			<key>action</key>
-			<string>openEmail</string>
+			<string>ClearImages</string>
 		</dict>
 
-		<!-- Weibo -->
+
+
+		<!-- [] LINKS -->
 		<dict>
 			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>cellClass</key>
-			<string>CRButtonCell</string>
+			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>CRWeibo</string>
-			<key>icon</key>
-			<string>Weibo.png</string>
-			<key>action</key>
-			<string>openWeibo</string>
+			<string>CRLinks</string>
 		</dict>
 
 		<!-- Twitter -->
@@ -91,62 +78,19 @@
 			<string>openTwitter</string>
 		</dict>
 
-		<!-- [] LINKS -->
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>CRLinks</string>
-		</dict>
-
-		<!-- Source Code -->
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>cellClass</key>
-			<string>CRButtonCell</string>
-			<key>label</key>
-			<string>CRSouce</string>
-			<key>icon</key>
-			<string>github.png</string>
-			<key>action</key>
-			<string>openGitHub</string>
-		</dict>
-
-		<!-- blog -->
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>cellClass</key>
-			<string>CRButtonCell</string>
-			<key>label</key>
-			<string>CRBlog</string>
-			<key>icon</key>
-			<string>blog.png</string>
-			<key>action</key>
-			<string>openBlog</string>
-		</dict>
-		<!-- Donate -->
-		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>CRDonate</string>
-		</dict>
-
-<!-- Buy Me A Beer -->
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>cellClass</key>
-			<string>CRButtonCell</string>
-			<key>label</key>
-			<string>CRBeer</string>
-			<key>icon</key>
-			<string>beer.png</string>
-			<key>action</key>
-			<string>openDonate</string>
-		</dict>
+		<!-- Buy Me A Beer -->
+				<dict>
+					<key>cell</key>
+					<string>PSButtonCell</string>
+					<key>cellClass</key>
+					<string>CRButtonCell</string>
+					<key>label</key>
+					<string>CRBeer</string>
+					<key>icon</key>
+					<string>beer.png</string>
+					<key>action</key>
+					<string>openDonate</string>
+				</dict>
 
 		<!-- [] FOOTER -->
 		<dict>
