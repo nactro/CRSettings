@@ -25,7 +25,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Features</string>
+			<string>CRFeatures</string>
 		</dict>
 		<!-- From Photos -->
 		<dict>
@@ -34,11 +34,11 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Select from Photos</string>
+			<string>CRSelect</string>
 			<key>icon</key>
-			<string>bug.png</string>
+			<string>open.png</string>
 			<key>action</key>
-			<string>SelectfromPhotos</string>
+			<string>selectfromPhotos</string>
 		</dict>
 		<!-- Clear Images -->
 		<dict>
@@ -47,11 +47,11 @@
 			<key>cellClass</key>
 			<string>CRButtonCell</string>
 			<key>label</key>
-			<string>Clear the image</string>
+			<string>CRClear</string>
 			<key>icon</key>
-			<string>email.png</string>
+			<string>clean.png</string>
 			<key>action</key>
-			<string>ClearImages</string>
+			<string>clearImages</string>
 		</dict>
 
 

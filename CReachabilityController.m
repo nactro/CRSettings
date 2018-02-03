@@ -5,6 +5,7 @@
 
 @implementation CReachabilityController
 
+
 //Shared Instance
 +(instancetype)sharedInstance {
 	static dispatch_once_t pred;
@@ -24,9 +25,10 @@
 -(void)setupImage {
 
 	if (backgroundWindow) {
-		NSString *iName = @"Custom.png";
-		NSString *iPath = [kImageDirectory stringByAppendingPathComponent:iName];
-		UIImage *CRImage = [UIImage imageWithContentsOfFile:iPath];
+
+		NSString *pictureName = @"crsettings.png";
+		NSString *picturePath = [kImageDirectory stringByAppendingPathComponent:pictureName];
+		UIImage *CRImage = [UIImage imageWithContentsOfFile:picturePath];
 		CRImageview = [[[UIImageView alloc] initWithFrame:backgroundWindow.bounds]initWithImage:CRImage];
 		CRImageview.contentMode = UIViewContentModeScaleAspectFit;
 	    CRImageview.clipsToBounds = NO;

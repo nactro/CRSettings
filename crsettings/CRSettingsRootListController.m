@@ -2,11 +2,14 @@
 
 #define BG_COLOR		[UIColor colorWithRed:33/255.0 green:33/255.0 blue:33/255.0 alpha:1] // blackColor
 #define VERSION_COLOR		[UIColor colorWithRed:56/255.0 green:56/255.0 blue:58/255.0 alpha:1] // systemGrayColor
+#define kDeviceWidth       [UIScreen mainScreen].bounds.size.width  
+#define kImagePath @"/var/mobile/Documents/crsettings.png"
 
 @implementation CRSettingsRootListController
 
-static float headerHeight = 140.0f;
-#define VERSION_STRING	@"v2.0.0 - No Respring !"
+static float headerHeight = 140.0f; //静态常量
+
+#define VERSION_STRING	@"v2.0.0 - Take immediate effect !"
 
 - (NSArray *)specifiers {
 	if (!_specifiers) {
@@ -41,7 +44,7 @@ static float headerHeight = 140.0f;
 	}
 	if (!self.headerView) {
 		/* initlize headerView */
-		UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0,0,320,headerHeight)];
+		UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0,0,kDeviceWidth,headerHeight)];
 		headerView.opaque = NO;
 		headerView.backgroundColor = UIColor.clearColor;
 
@@ -51,7 +54,7 @@ static float headerHeight = 140.0f;
 		tweakTitle.font = [UIFont systemFontOfSize:40 weight:UIFontWeightThin];
 		tweakTitle.textColor = UIColor.blackColor;
 		//tweakTitle.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-		tweakTitle.textAlignment = UITextAlignmentCenter;
+		tweakTitle.textAlignment = NSTextAlignmentCenter;
 		[headerView addSubview:tweakTitle];
 
 		CGRect subtitleFrame = CGRectMake(15, 98, headerView.bounds.size.width, 20);
@@ -60,7 +63,7 @@ static float headerHeight = 140.0f;
 		tweakSubtitle.font = [UIFont systemFontOfSize:14 weight:UIFontWeightThin];
 		tweakSubtitle.textColor = VERSION_COLOR;
 		//tweakSubtitle.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-		tweakSubtitle.textAlignment = UITextAlignmentCenter;
+		tweakSubtitle.textAlignment = NSTextAlignmentCenter;
 		[headerView addSubview:tweakSubtitle];
 		//initlize
 		self.headerView = headerView;
@@ -78,15 +81,71 @@ static float headerHeight = 140.0f;
 
 /* Major Functions in Prefs */
 
-- (void)SelectfromPhotos {
-
-	//TODO
+- (void)selectfromPhotos {
+/**
+     *  弹出提示框
+     */
+            //初始化提示框
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            //按钮：从相册选择，类型：UIAlertActionStyleDefault
+    [alert addAction:[UIAlertAction actionWithTitle:@"从相册选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            //初始化UIImagePickerController
+        UIImagePickerController *PickerImage = [[UIImagePickerController alloc]init];
+            //获取方式1：通过相册（呈现全部相册），UIImagePickerControllerSourceTypePhotoLibrary
+            //获取方式2，通过相机，UIImagePickerControllerSourceTypeCamera
+            //获取方法3，通过相册（呈现全部图片），UIImagePickerControllerSourceTypeSavedPhotosAlbum
+        PickerImage.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            //允许编辑，即放大裁剪
+        PickerImage.allowsEditing = YES;
+            //自代理
+        PickerImage.delegate = self;
+            //页面跳转
+        [self presentViewController:PickerImage animated:YES completion:nil];
+    }]];
+        //按钮：拍照，类型：UIAlertActionStyleDefault
+    [alert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+        /**
+         其实和从相册选择一样，只是获取方式不同，前面是通过相册，而现在，我们要通过相机的方式
+         */
+        UIImagePickerController *PickerImage = [[UIImagePickerController alloc]init];
+            //获取方式:通过相机
+        PickerImage.sourceType = UIImagePickerControllerSourceTypeCamera;
+        PickerImage.allowsEditing = YES;
+        PickerImage.delegate = self;
+        [self presentViewController:PickerImage animated:YES completion:nil];
+    }]];
+        //按钮：取消，类型：UIAlertActionStyleCancel
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 
 }
 
-- (void)ClearImages {
+#pragma mark - UIImagePickerControllerDelegate
 
-	//TODO ClearImages
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];//常量
+    NSString *imagePath = [documentsDirectory stringByAppendingPathComponent:@"crsettings.png"];
+    //extracting image from the picker and saving it
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType]; 
+
+    if ([mediaType isEqualToString:@"public.image"]){
+        UIImage *editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
+        NSData *writeData = UIImagePNGRepresentation(editedImage);
+        [writeData writeToFile:imagePath atomically:YES];
+    }
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+
+}
+
+
+- (void)clearImages {
+
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    [fileManager removeItemAtPath:kImagePath error:nil];
 
 }
 
